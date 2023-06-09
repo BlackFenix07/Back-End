@@ -20,7 +20,7 @@ class ProductsService {
     }
   }
 
-  async create() {
+  async create(data) {
     const newProduct = {
       id: faker.datatype.uuid(),
       ...data,
@@ -30,10 +30,10 @@ class ProductsService {
   }
 
   find() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         resolve(this.products);
-      }, 5000);
+      }, 3000);
     });
   }
 
